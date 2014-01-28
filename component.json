@@ -1,0 +1,14 @@
+{
+  "name": "swiper-hash-navigation",
+  "repo": "nolimits4web/Swiper-Hash-Navigation",
+  "description": "Hash Navigation plugin for Swiper",
+  "version": "1.0.0",
+  "keywords": ["swiper", "swipe", "slider", "plugin", "hash"],
+  "dependencies": {
+  },
+  "scripts": [
+    "dist/idangerous.swiper.hashnav.js"
+  ],
+  "main": "dist/idangerous.swiper.hashnav.js",
+  "license": "MIT"
+}
