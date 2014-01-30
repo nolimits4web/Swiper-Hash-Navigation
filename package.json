@@ -1,7 +1,7 @@
 {
   "name": "swiper-hash-navigation",
   "version": "1.0.0",
-  "description": "Mobile touch slider and framework with hardware accelerated transitions",
+  "description": "Hash Navigation plugin for Swiper",
   "main": "dist/idangerous.swiper.hashnav.js",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/nolimits4web/Swiper-Hash-Navigation/issues"
   },
-  "homepage": "http://www.idangero.us/sliders/swiper",
+  "homepage": "http://www.idangero.us/sliders/swiper/plugins/hashnav.php",
   "engines": {
     "node": ">= 0.10.0"
   },
