@@ -1,7 +1,7 @@
 'use strict';
 
 /*global require:true, module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     // show elapsed time at the end
     require('time-grunt')(grunt);
     // load all grunt tasks
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
     // Build a new version of the library
     this.registerTask('build', 'Builds a distributable version of <%= pkg.name %>', [
         'concat:js',
-        //'jshint:all',
+        'jshint:lib',
         'uglify'
     ]);
 
