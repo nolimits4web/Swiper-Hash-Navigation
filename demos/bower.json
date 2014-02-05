@@ -1,0 +1,9 @@
+{
+  "name": "swiper-hash-navigation-demos",
+  "description": "Demos for Hash Navigation plugin for Swiper",
+  "author": "Vladimir Kharlampidi",
+  "license": ["GPL", "MIT"],
+  "dependencies": {
+    "swiper": "~2.4.2"
+  }
+}
