@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="bower_components/swiper/dist/idangerous.swiper.css">
+  <style>
+/* Hash Nav demos Syling */
+body {
+  margin: 0;
+}
+.swiper-container {
+  width: 500px;
+  height:300px;
+  margin: 100px auto;
+}
+
+.swiper-slide{
+  width:100%;
+  height:100%;
+  line-height:300px;
+  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-align:center;
+  color:#fff;
+  font-size:50px;
+  font-weight:100;
+}
+.swiper-slide{
+  background:#333;
+}
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-hash="slide1">Slide 1</div>
+<div class="swiper-slide" data-hash="slide2">Slide 2</div>
+<div class="swiper-slide" data-hash="slide3">Slide 3</div>
+<div class="swiper-slide" data-hash="slide4">Slide 4</div>
+    </div>
+  </div>
+  <script src="bower_components/swiper/dist/idangerous.swiper.min.js"></script>
+  <script src="js/idangerous.swiper.hashnav.js"></script>
+  <script>
+      new Swiper('.swiper-container',{ hashNav:true })
+  </script>
+</body>
+</html>
