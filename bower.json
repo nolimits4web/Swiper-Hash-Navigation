@@ -12,7 +12,10 @@
   "scripts": [
     "dist/idangerous.swiper.hashnav.js"
   ],
-  "main": "dist/idangerous.swiper.hashnav.js",
+  "main": [
+    "dist/idangerous.swiper.hashnav.js",
+    "dist/idangerous.swiper.hashnav.amd.js"
+  ],
   "license": ["GPL", "MIT"],
   "dependencies": {
     "swiper": "~2.3.x"
