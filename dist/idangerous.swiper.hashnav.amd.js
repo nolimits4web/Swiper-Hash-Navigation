@@ -12,7 +12,17 @@
  *
  * Released on: August 30, 2014
 */
-(function (Swiper) {
+(function(root, factory) {
+    if(typeof exports === 'object') {
+        module.exports = factory(require('swiper'));
+    }
+    else if(typeof define === 'function' && define.amd) {
+        define('swiper-hash-navigation', ['swiper'], factory);
+    }
+    else {
+        root['Swiper'] = factory(root.Swiper);
+    }
+}(this, function(swiper) {
 
     Swiper.prototype.plugins.hashNav = function (swiper, params) {
         'use strict';
@@ -54,4 +64,6 @@
     };
     
 
-})(Swiper);
+    return Swiper;
+
+}));

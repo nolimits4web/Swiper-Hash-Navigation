@@ -143,11 +143,17 @@ module.exports = function (grunt) {
         'concat:umd',
     ]);
 
+    this.registerTask('delete-umd', 'Builds a umd compatible distributable version of <%= pkg.name %>', function () {
+        var fs = require('fs');
+        fs.unlink('dist/' + swiper.filename + '.umd.js');
+    });
+
     this.registerTask('dist', 'Build dist of <%= pkg.name %>', [
         'clean',
         'jshint:lib',
         'build',
         'build-umd',
+        'delete-umd',
         'uglify'
     ]);
 
