@@ -42,10 +42,6 @@ module.exports = function (grunt) {
             js: {
                 src: ['dist/<%= swiper.filename %>.js'],
                 dest: 'dist/<%= swiper.filename %>.js'
-            },
-            umd: {
-                src: ['<%= umd.lib.dest %>'],
-                dest: 'dist/<%= swiper.filename %>.amd.js'
             }
         },
         copy: {
@@ -71,10 +67,6 @@ module.exports = function (grunt) {
             lib: {
                 src: ['dist/<%= swiper.filename %>.js'],
                 dest: 'dist/<%= swiper.filename %>.min.js',
-            },
-            umd: {
-                src: ['dist/<%= swiper.filename %>.amd.js'],
-                dest: 'dist/<%= swiper.filename %>.amd.min.js',
             }
         },
         jshint: {
@@ -88,34 +80,6 @@ module.exports = function (grunt) {
             lib: {
                 src: ['lib/<%= swiper.filename %>.js']
             },
-        },
-        umd: {
-            lib: {
-                src: '<%= jshint.lib.src %>',
-                dest: 'dist/<%= swiper.filename %>.umd.js',
-                amdModuleId: '<%= pkg.name %>',
-                objectToExport: 'Swiper',
-                indent: '    ',
-                deps: {
-                    'default': ['swiper'],
-                    'amd': ['swiper'],
-                    'cjs': ['swiper'],
-                    'global': ['Swiper']
-                }
-            }
-        },
-        wrap: {
-            js: {
-                src: ['<%= jshint.lib.src %>'],
-                dest: 'dist/<%= swiper.filename %>.js',
-                options: {
-                    wrapper: [
-                        '(function (Swiper) {\n',
-                        '\n})(Swiper);'
-                    ],
-                    indent: '    '
-                }
-            }
         },
         watch: {
             gruntfile: {
@@ -134,26 +98,13 @@ module.exports = function (grunt) {
 
     // Build a new version of the library
     this.registerTask('build', 'Builds a distributable version of <%= pkg.name %>', [
-        'wrap:js',
         'concat:js'
     ]);
-
-    this.registerTask('build-umd', 'Builds a umd compatible distributable version of <%= pkg.name %>', [
-        'umd:lib',
-        'concat:umd',
-    ]);
-
-    this.registerTask('delete-umd', 'Builds a umd compatible distributable version of <%= pkg.name %>', function () {
-        var fs = require('fs');
-        fs.unlink('dist/' + swiper.filename + '.umd.js');
-    });
 
     this.registerTask('dist', 'Build dist of <%= pkg.name %>', [
         'clean',
         'jshint:lib',
         'build',
-        'build-umd',
-        'delete-umd',
         'uglify'
     ]);
 
